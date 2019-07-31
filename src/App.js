@@ -45,7 +45,7 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="bg font-style">
         <Titles />
         <Form getWeather={this.getWeather} />
         <Weather
