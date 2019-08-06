@@ -4,11 +4,12 @@
   font-family: "DM Serif Text", serif;
 }
 
-.bg {
-  height: 100vh;
-  background: url("img/clouds.jpeg") center center no-repeat;
+body {
+  background: url("img/clouds.jpeg");
   background-size: cover;
-  color: #000;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .font-style {
