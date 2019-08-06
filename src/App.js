@@ -12,6 +12,8 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    minTemp: undefined,
+    maxTemp: undefined,
     error: undefined
   };
   getWeather = async e => {
@@ -25,11 +27,15 @@ class App extends React.Component {
     if (city && country) {
       console.log(data);
       this.setState({
-        temperature: data.main.temp,
+        temperature: Math.round(data.main.temp),
+        minTemp: Math.round(data.main.temp_min),
+        maxTemp: Math.round(data.main.temp_max),
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
-        description: data.weather[0].description,
+        description:
+          data.weather[0].description.charAt(0).toUpperCase() +
+          data.weather[0].description.slice(1),
         error: ""
       });
     } else {
@@ -48,21 +54,17 @@ class App extends React.Component {
       <div className="bg">
         <Titles />
         <div className="font-style container-fluid">
-          <div className="row">
-            <div className="col">
-              <Form getWeather={this.getWeather} />
-            </div>
-            <div className="col">
-              <Weather
-                temperature={this.state.temperature}
-                city={this.state.city}
-                country={this.state.country}
-                humidity={this.state.humidity}
-                description={this.state.description}
-                error={this.state.error}
-              />
-            </div>
-          </div>
+          <Form getWeather={this.getWeather} />
+          <Weather
+            temperature={this.state.temperature}
+            minTemp={this.state.minTemp}
+            maxTemp={this.state.maxTemp}
+            city={this.state.city}
+            country={this.state.country}
+            humidity={this.state.humidity}
+            description={this.state.description}
+            error={this.state.error}
+          />
         </div>
       </div>
     );
