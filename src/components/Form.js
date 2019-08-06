@@ -26,7 +26,7 @@ const Form = props => (
           />
         </div>
         <div>
-          <button type="submit" className="btn btn-warning">
+          <button type="submit" className="ml-2 btn btn-warning">
             Submit
           </button>
         </div>
