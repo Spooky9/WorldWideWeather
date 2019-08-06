@@ -2,9 +2,9 @@ import React from "react";
 
 const Form = props => (
   <form className="text-center" onSubmit={props.getWeather}>
-    <div class="container">
+    <div className="container">
       <div className="row align-items-end">
-        <div class="col">
+        <div className="col">
           <label>City</label>
           <input
             className="form-control"
@@ -15,7 +15,7 @@ const Form = props => (
             required
           />
         </div>
-        <div class="col">
+        <div className="col">
           <label>Country</label>
           <input
             className="form-control"

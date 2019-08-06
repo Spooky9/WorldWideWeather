@@ -36,11 +36,11 @@
 }
 
 .highLowTemp {
-  font-size: 28px;
+  font-size: 24px;
   padding: 0px 30px 0px 0px;
 }
 
-.humidity {
-  padding-top: 75px;
+.right-col {
+  padding: auto auto;
   font-size: 25px;
 }
